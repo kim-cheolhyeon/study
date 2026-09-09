@@ -1,3 +1,23 @@
+# 폴더 구조
+
+```text
+study/
+├── DataAnalysis_with_python/
+│   ├── CH5_데이터분석기초.ipynb
+│   ├── CH6_자유자재로데이터가공하기.ipynb
+│   └── data/
+│       ├── exam.csv
+│       ├── midwest.csv
+│       └── mpg.csv
+├── DataStructure/
+│   └── lists.py
+├── .gitignore
+└── readme.md
+```
+
+- `DataAnalysis_with_python/`: Do it! 파이썬 데이터 분석 실습 노트북과 데이터
+- `DataStructure/`: 자료구조 실습 코드
+
 # Commit Message Convention
 
 실습 코드의 변경 사항을 명확하게 기록하기 위해 아래 커밋 메시지 규칙을 사용한다.

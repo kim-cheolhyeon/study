@@ -31,10 +31,10 @@ study/
 ### 예시
 
 ```text
-practice(data-structures): 배열 기반 스택 구현
-fix(data-structures): 큐 dequeue 예외 처리 수정
-refactor(data-structures): 연결 리스트 코드 구조 개선
-docs(data-structures): 실행 방법 README 추가
+practice(DataStructure): 배열 기반 스택 구현
+fix(DataStructure): 큐 dequeue 예외 처리 수정
+refactor(DataStructure): 연결 리스트 코드 구조 개선
+docs(DataStructure): 실행 방법 README 추가
 chore: gitignore 설정
 ```
 
@@ -50,14 +50,11 @@ chore: gitignore 설정
 
 ## Scope
 
-`scope`에는 학습 분야의 폴더명을 작성한다.
+`scope`에는 실제 학습 분야의 폴더명을 대소문자와 밑줄까지 그대로 작성한다.
 
 ```text
-data-structures
-algorithms
-database
-operating-systems
-network
+DataStructure
+DataAnalysis_with_python
 ```
 
 `scope`가 필요하지 않은 작업은 생략할 수 있다.
@@ -70,7 +67,7 @@ docs: README 수정
 ## 규칙
 
 - 커밋 메시지는 `type(scope): 내용` 형식을 따른다.
-- `type`과 `scope`는 영문 소문자로 작성한다.
-- `scope`는 실제 학습 폴더명을 사용한다.
+- `type`은 영문 소문자로 작성한다.
+- `scope`는 실제 학습 폴더명의 대소문자와 밑줄을 그대로 사용한다.
 - 커밋 하나에는 하나의 작업 단위를 담는다.
 - 메시지만 보고 어떤 작업을 했는지 알 수 있도록 작성한다.

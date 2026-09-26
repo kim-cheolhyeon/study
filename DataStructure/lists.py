@@ -21,6 +21,18 @@ class ArrayList:
         self.capacity = capacity
         self.array = [None] * self.capacity
 
+    def __len__(self):
+        """
+        리스트의 길이 출력
+        """
+        return self.size
+
+    def __str__(self):
+        """
+        리스트 출력
+        """
+        return str(self.array[:self.size])
+
     def is_empty(self):
         """
         리스트가 비어 있는지 검사.

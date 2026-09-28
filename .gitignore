@@ -2,5 +2,8 @@
 */__pycache__
 .venv/
 
+# 실험용 노트북
+*/test.ipynb
+
 # vscode
 *.code-workspace 

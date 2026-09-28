@@ -39,7 +39,7 @@ class CircularQueue:
 
         if self.rear > self.front:
             return "<-" + str(self.array[self.front:self.rear]) + "<-"
-        elif self.front >= self.rear:
+        else :
             arr = self.array[self.front:]
             arr.extend(self.array[:self.rear])
             return "<-" + str(arr) + "<-"

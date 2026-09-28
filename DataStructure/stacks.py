@@ -1,5 +1,5 @@
 class ArrayStack:
-    """`
+    """
     고정된 크기의 배열로 구현한 스택 자료구조
     """
     def __init__(self, capacity=100):

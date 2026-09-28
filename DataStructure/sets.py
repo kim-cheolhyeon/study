@@ -143,11 +143,11 @@ class ArraySet:
         Worst: O(n)
             중복 여부를 확인하기 위해 전체 집합을 탐색하는 경우.
         """
-        if self.is_full():
-            raise OverflowError("용량 포화")
-
         if self.is_contain(e):
             return
+        
+        if self.is_full():
+            raise OverflowError("용량 포화")
 
         self.array[self.size] = e
         self.size += 1

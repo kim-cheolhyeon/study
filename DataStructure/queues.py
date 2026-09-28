@@ -169,27 +169,30 @@ class CircularQueue(CircularBuffer):
 
 
 class CircularDeque(CircularBuffer):
+    """
+    배열로 구현한 원형 덱.
+
+    Attributes
+    ----------
+    front : int
+        현재 가장 앞쪽 원소가 저장된 인덱스.
+    rear : int
+        다음 원소가 뒤쪽에 삽입될 인덱스.
+        마지막 원소의 인덱스가 아님.
+    size : int
+        현재 저장된 원소의 개수.
+
+    Notes
+    -----
+    - add_front: front를 한 칸 이동한 후 해당 위치에 원소를 삽입.
+    - add_rear: rear 위치에 원소를 삽입한 후 rear를 한 칸 이동.
+    - delete_front: front 위치의 원소를 삭제한 후 front를 한 칸 이동.
+    - delete_rear: rear를 한 칸 이동한 후 해당 위치의 원소를 삭제.
+    - front와 rear의 이동은 배열의 양 끝을 기준으로 순환함.
+    """
     def __str__(self):
         """
-        배열로 구현한 원형 덱.
-
-        Attributes
-        ----------
-        front : int
-            현재 가장 앞쪽 원소가 저장된 인덱스.
-        rear : int
-            다음 원소가 뒤쪽에 삽입될 인덱스.
-            마지막 원소의 인덱스가 아님.
-        size : int
-            현재 저장된 원소의 개수.
-
-        Notes
-        -----
-        - add_front: front를 한 칸 이동한 후 해당 위치에 원소를 삽입.
-        - add_rear: rear 위치에 원소를 삽입한 후 rear를 한 칸 이동.
-        - delete_front: front 위치의 원소를 삭제한 후 front를 한 칸 이동.
-        - delete_rear: rear를 한 칸 이동한 후 해당 위치의 원소를 삭제.
-        - front와 rear의 이동은 배열의 양 끝을 기준으로 순환함.
+        덱의 현재 상태를 문자열로 반환.
         """
         if self.is_empty():
             return str(list())

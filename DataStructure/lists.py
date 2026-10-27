@@ -1,3 +1,5 @@
+from node import Node
+
 class ArrayList:
     """
     고정된 크기의 배열로 구현한 리스트 자료구조
@@ -172,3 +174,33 @@ class ArrayList:
             raise IndexError("범위를 벗어난 인덱스")
 
         return self.array[pos]
+
+
+class LinkedList:
+    """
+    연결된 구조로 구현한 리스트 자료구조
+    """
+    
+    def __init__(self):
+        pass
+
+    def __len__(self):
+        pass
+
+    def __str__(self):
+        pass
+    
+    def is_empty(self):
+        pass
+
+    def is_full(self):
+        pass
+
+    def insert(self, pos, e):
+        pass
+
+    def delete(self, pos):
+        pass
+
+    def get_entry(self, pos):
+        pass

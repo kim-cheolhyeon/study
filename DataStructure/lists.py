@@ -231,22 +231,38 @@ class LinkedList:
     """
     
     def __init__(self):
-        pass
+        self.size = 0
+        self.head = None
 
     def __len__(self):
-        pass
+        return self.size
 
     def __str__(self):
         pass
+
+    def _validate_index(self, pos):
+            """
+            유효한 인덱스인지 검사
+    
+            Raises
+            ------
+            IndexError
+                삽입 위치가 유효한 범위를 벗어난 경우
+            """
+            if not (0 <= pos < self.size):
+                raise IndexError("범위를 벗어난 인덱스")
     
     def is_empty(self):
-        pass
+        return self.size == 0
 
     def is_full(self):
-        pass
+        return False
 
     def insert(self, pos, e):
-        pass
+        self._validate_index(e)
+
+        for _ in range(pos):
+            
 
     def delete(self, pos):
         pass

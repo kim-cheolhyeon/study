@@ -1,4 +1,4 @@
-from node import Node
+from DataStructure.node import Node
 
 class ArrayList:
     """
@@ -35,6 +35,33 @@ class ArrayList:
         """
         return str(self.array[:self.size])
 
+    def __getitem__(self, pos):
+        """
+        리스트의 특정 위치에 있는 원소 조회
+        """
+        return self.get_entry(pos)
+
+    def __setitem__(self, pos, e):
+        """
+        리스트의 특정 위치에 있는 원소 변경
+        """
+        if not (0 <= pos < self.size):
+            raise IndexError("범위를 벗어난 인덱스")
+
+        self.array[pos] = e
+
+    def _validate_index(self, pos):
+        """
+        유효한 인덱스인지 검사
+
+        Raises
+        ------
+        IndexError
+            삽입 위치가 유효한 범위를 벗어난 경우
+        """
+        if not (0 <= pos < self.size):
+            raise IndexError("범위를 벗어난 인덱스")
+
     def is_empty(self):
         """
         리스트가 비어 있는지 검사.
@@ -67,6 +94,31 @@ class ArrayList:
         """
         return self.size == self.capacity
 
+    def append(self, e):
+        """
+        리스트의 마지막 위치에 원소를 삽입.
+
+        Parameters
+        ----------
+        e : object
+            삽입할 원소
+
+        Raises
+        ------
+        OverflowError
+            리스트가 포화 상태여서 원소를 추가할 수 없는 경우
+        
+        Time Complexity
+        ---------------
+        O(1)
+            현재 사이즈를 기반으로 삽입하기에 항상 상수 시간 소요
+        """
+        if self.is_full():
+            raise OverflowError("리스트 포화")
+
+        self.array[self.size] = e
+        self.size += 1
+
     def insert(self, pos, e):
         """
         리스트의 특정 위치에 원소를 삽입.
@@ -95,8 +147,7 @@ class ArrayList:
         if self.is_full():
             raise OverflowError("리스트 포화")
         
-        if not (0 <= pos <= self.size):
-            raise IndexError("범위를 벗어난 인덱스")
+        self._validate_index(pos = pos)
 
         for i in range(self.size - 1, pos - 1, -1):
             self.array[i + 1] = self.array[i]
@@ -133,8 +184,7 @@ class ArrayList:
         if self.is_empty():
             raise IndexError("빈 리스트는 삭제 불가능")
 
-        if not (0 <= pos < self.size):
-            raise IndexError("범위를 벗어난 인덱스")
+        self._validate_index(pos = pos)
 
         item = self.array[pos]
 
@@ -170,8 +220,7 @@ class ArrayList:
         O(1)
             배열의 인덱스를 통해 원소에 직접 접근
         """
-        if not (0 <= pos < self.size):
-            raise IndexError("범위를 벗어난 인덱스")
+        self._validate_index(pos = pos)
 
         return self.array[pos]
 
